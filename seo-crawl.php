@@ -28,7 +28,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * The main plugin class
  */
-final class SeoCrawler {
+final class SeoCrawl {
 
     /**
      * Plugin version
@@ -51,7 +51,7 @@ final class SeoCrawler {
     /**
      * Initializes a singleton instance
      *
-     * @return \SeoCrawler
+     * @return \SeoCrawl
      */
     public static function init() {
         static $instance = false;
@@ -69,15 +69,15 @@ final class SeoCrawler {
      * @return void
      */
     public function define_constants() {
-        define( 'SEOCRAWLER_VERSION', self::version );
-        define( 'SEOCRAWLER_FILE', __FILE__ );
-        define( 'SEOCRAWLER_PATH', __DIR__ );
-        define( 'SEOCRAWLER_URL', plugins_url( '', SEOCRAWLER_FILE ) );
-        define( 'SEOCRAWLER_ASSETS', SEOCRAWLER_URL . '/assets' );
-        define( 'SEOCRAWLER_BASENAME', plugin_basename( __FILE__ ) );
-        define( 'SEOCRAWLER_PLUGIN_NAME', 'SEOCRAWLER' );
-        define( 'SEOCRAWLER_MINIMUM_PHP_VERSION', '7.0' );
-        define( 'SEOCRAWLER_MINIMUM_WP_VERSION', '5.0' );
+        define( 'SEOCRAWL_VERSION', self::version );
+        define( 'SEOCRAWL_FILE', __FILE__ );
+        define( 'SEOCRAWL_PATH', __DIR__ );
+        define( 'SEOCRAWL_URL', plugins_url( '', SEOCRAWL_FILE ) );
+        define( 'SEOCRAWL_ASSETS', SEOCRAWL_URL . '/assets' );
+        define( 'SEOCRAWL_BASENAME', plugin_basename( __FILE__ ) );
+        define( 'SEOCRAWL_PLUGIN_NAME', 'SEOCRAWL' );
+        define( 'SEOCRAWL_MINIMUM_PHP_VERSION', '7.0' );
+        define( 'SEOCRAWL_MINIMUM_WP_VERSION', '5.0' );
     }
 
     /**
@@ -87,17 +87,17 @@ final class SeoCrawler {
      */
     public function init_plugin() {
 
-        new SeoCrawler\Assets();
-        new SeoCrawler\SeoCrawleri18n();
-        new SeoCrawler\Admin\Cron\SyncCron();
+        // new SeoCrawl\Assets();
+        // new SeoCrawl\SeoCrawli18n();
+        // new SeoCrawl\Admin\Cron\SyncCron();
 
-        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-            new SeoCrawler\Ajax();
-        }
+        // if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+        //     new SeoCrawl\Ajax();
+        // }
 
-        if ( is_admin() ) {
-            new SeoCrawler\Admin();
-        }
+        // if ( is_admin() ) {
+        //     new SeoCrawl\Admin();
+        // }
     }
 
     /**
@@ -106,17 +106,17 @@ final class SeoCrawler {
      * @return void
      */
     public function activate() {
-        $installer = new SeoCrawler\Installer();
-        $installer->run();
+        // $installer = new SeoCrawl\Installer();
+        // $installer->run();
     }
 }
 
 /**
  * Initializes the main plugin
  */
-function seo_crawler() {
-    return SeoCrawler::init();
+function seo_crawl() {
+    return SeoCrawl::init();
 }
 
 // kick-off the plugin
-seo_crawler();
+seo_crawl();
