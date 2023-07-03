@@ -88,7 +88,7 @@ final class SeoCrawl {
     public function init_plugin() {
 
         new SeoCrawl\Assets();
-        // new SeoCrawl\SeoCrawli18n();
+        new SeoCrawl\SeoCrawli18n();
         // new SeoCrawl\Admin\Cron\SyncCron();
 
         // if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
