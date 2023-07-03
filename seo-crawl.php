@@ -106,8 +106,8 @@ final class SeoCrawl {
      * @return void
      */
     public function activate() {
-        // $installer = new SeoCrawl\Installer();
-        // $installer->run();
+        $installer = new SeoCrawl\Installer();
+        $installer->run();
     }
 }
 
