@@ -17,11 +17,11 @@
             endif;
         ?>
 
-        <button type="button" name="stop-crawling" id="stop-crawling" class="button button-primary button-large seo-crawl-margin-right-20" style="display:<?php echo $style; ?>">
+        <button type="button" name="stop-crawling" id="stop-crawling" class="button button-primary button-large seo-crawl-margin-right-20" style="display:<?php echo esc_attr( $style ); ?>">
             <?php echo __('Stop Crawling','seo-crawl'); ?>
         </button>
 
-        <?php if( ! empty( $sitemap_url ) ):?>
+        <?php if( ! empty( $sitemap_url ) ): ?>
         <a href="<?php echo esc_url( $sitemap_url ); ?>" id="view-sitemap" class="button button-primary button-large" target="_blank">
             <?php echo __('View Sitemap','seo-crawl'); ?>
         </a>
