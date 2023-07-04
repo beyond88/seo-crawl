@@ -56,8 +56,8 @@ class Main {
         if ( file_exists( $template ) ) {
 			$crawl = (array) get_option($this->_option_name);
 
-			$sitemap_url = $crawl['sitemap_url'] ?: '';
-			$links = $crawl['links'] ?: [];
+			$sitemap_url = array_key_exists( 'sitemap_url', $crawl ) ? $crawl['sitemap_url'] : '';
+			$links = array_key_exists( 'links', $crawl ) ? $crawl['links'] : [];
 
             return require_once $template;
         }

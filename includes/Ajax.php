@@ -36,7 +36,7 @@ class Ajax {
             try {
 
                 if( ! wp_next_scheduled( 'seocrawl_sync_schedule' ) ) {
-                    wp_schedule_event( time(), 'seocrawl_sync_1_min', 'seocrawl_sync_schedule' );
+                    wp_schedule_event( time(), 'hourly', 'seocrawl_sync_schedule' );
                 }
 
                 CrawlTask::instance()->crawl_task();

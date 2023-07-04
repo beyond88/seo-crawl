@@ -36,7 +36,7 @@
         hideBtn('#stop-crawling');
     });
 
-    function sendAjaxRequest(action, button, result_selector) {
+    function sendAjaxRequest(action, button, result_selector, reload = true) {
 
         displayLoading(button);
 
@@ -51,6 +51,9 @@
             success: function(response) {
                 WTBtnResponse(result_selector, response.data);
                 resetLoading(button);
+				if(reload){
+					window.location.reload();
+				}
             },
             error: function(e){
                 resetLoading(button);
