@@ -40,7 +40,7 @@
                 if ( ! empty( $links ) ) {
                     echo '<ul>';
                         foreach ($links as $link) {
-                            echo '<li>' . esc_html($link) . '</li>';
+                            echo '<li><a href='.esc_url( $link ).' target="_blank">' . esc_html( $link ) . '</a></li>';
                         }
                     echo '</ul>';
                 } else {
