@@ -36,10 +36,7 @@
 		],
 		"psr-4": {
 			"SeoCrawl\\": "includes/"
-		},
-		"files": [
-			"includes/functions.php"
-		]
+		}
 	},
 	"autoload-dev": {},
 	"scripts": {
