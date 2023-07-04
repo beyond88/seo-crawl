@@ -27,15 +27,16 @@
 
 	<rule ref="WordPress">
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound" />
 	</rule>
     <rule ref="WordPress.WP.I18n">
         <properties>
-            <property name="text_domain" type="array" value="rocket" />
+            <property name="text_domain" type="array" value="seo-crawl" />
         </properties>
     </rule>
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <properties>
-            <property name="prefixes" type="array" value="rocket,wp_rocket" />
+            <property name="prefixes" type="array" value="seocrawl,seo_crawl" />
         </properties>
     </rule>
     <rule ref="WordPress.Files.FileName">

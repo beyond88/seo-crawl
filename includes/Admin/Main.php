@@ -1,6 +1,5 @@
 <?php
 namespace SeoCrawl\Admin;
-// use SeoCrawl\Helper as Helpers;
 
 /**
  * Settings Handler class
@@ -12,81 +11,73 @@ class Main {
 	 *
 	 * @var string
 	 */
-    public $_option_name  = 'seocrawl';
+	public $option_name = 'seo_crawl';
 
 	/**
 	 * Settings otpions group field
 	 *
 	 * @var string
 	 */
-	public $_option_group = 'seocrawl_options_group';
+	public $option_group = 'seocrawl_options_group';
 
 	/**
 	 * Settings otpions field default values
 	 *
 	 * @var array
 	 */
-    public $_default_options = array();
+	public $default_options = [];
 
-    /**
-     * Initial the class and its all methods
-     *
+	/**
+	 * Initial the class and its all methods
+	 *
 	 * @since 1.0.0
-	 * @access	public
-	 * @param	none
-     * @return	void
-     */
+	 * @return  void
+	 */
 	public function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'set_default_options' ) );
-		add_action( 'admin_init', array( $this, 'menu_register_settings' ) );
+		add_action( 'plugins_loaded', [ $this, 'set_default_options' ] );
+		add_action( 'admin_init', [ $this, 'menu_register_settings' ] );
 	}
 
-    /**
-     * Plugin page handler
-     *
+	/**
+	 * Plugin page handler
+	 *
 	 * @since 1.0.0
-	 * @access	public
-	 * @param	none
-     * @return	void
-     */
-    public function plugin_menu_page() {
+	 * @return string
+	 */
+	public function plugin_menu_page() {
 
-        $template = __DIR__ . '/views/menu-page.php';
+		$template = __DIR__ . '/views/menu-page.php';
 
-        if ( file_exists( $template ) ) {
-			$crawl = (array) get_option($this->_option_name);
+		if ( file_exists( $template ) ) {
+			$crawl = (array) get_option( $this->option_name );
 
 			$sitemap_url = array_key_exists( 'sitemap_url', $crawl ) ? $crawl['sitemap_url'] : '';
-			$links = array_key_exists( 'links', $crawl ) ? $crawl['links'] : [];
+			$links       = array_key_exists( 'links', $crawl ) ? $crawl['links'] : [];
 
-            return require_once $template;
-        }
+			return require_once $template;
+		}
 
-		print __('File not found!', 'seo-crawl');
-    }
+		print esc_html__( 'File not found!', 'seo-crawl' );
+	}
 
-    /**
+	/**
 	 * Save the setting options
 	 *
-	 * @since	1.0.0
-	 * @access 	public
-	 * @param	array
-	 * @return	void
+	 * @since   1.0.0
+	 * @return  void
 	 */
 	public function menu_register_settings() {
-		add_option( $this->_option_name, $this->_default_options );
-		register_setting( $this->_option_group, $this->_option_name );
+		add_option( $this->option_name, $this->default_options );
+		register_setting( $this->option_group, $this->option_name );
 	}
 
 	/**
 	 * Apply filter with default options
 	 *
-	 * @since	1.0.0
-	 * @access	public
-	 * @param	none
-	 * @return	void
+	 * @since   1.0.0
+	 * @return  string
 	 */
 	public function set_default_options() {
-		return apply_filters( 'seocrawl_default_options', $this->_default_options );
+		return apply_filters( 'seocrawl_default_options', $this->default_options );
 	}
 }
