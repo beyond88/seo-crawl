@@ -13,7 +13,7 @@
 
     function WTBtnResponse(result_selector, html = "") {
         if (!result_selector) {
-            result_selector = '.seo-crawler-status'
+            result_selector = '.seo-crawl-status'
         }
         $(result_selector).html(html);
     }
@@ -21,7 +21,7 @@
     $('body').on('click', '#start-crawl', function(){
         sendAjaxRequest('do_crawl_process',
             '#start-crawl',
-            '.seo-crawler-status',
+            '.seo-crawl-status',
         );
         showBtn('#stop-crawling');
     });
@@ -43,10 +43,10 @@
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: seocrawler.ajax_url,
+            url: seocrawl.ajax_url,
             data: {
                 action: action,
-                security: seocrawler.nonce,
+                security: seocrawl.nonce,
             },
             success: function(response) {
                 WTBtnResponse(result_selector, response.data);
@@ -62,7 +62,7 @@
     function showBtn(selector) {
         $(selector).show();
     }
-    
+
     function hideBtn(selector) {
         $(selector).hide();
     }

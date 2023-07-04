@@ -1,70 +1,69 @@
-.toplevel_page_seocrawler .wrap h1.wp-heading-inline {
-  display: block;
+.toplevel_page_seocrawl .wrap h1.wp-heading-inline {
+	display: block;
 }
 
 .lds-ring {
-  display: none;
-  position: relative;
-  width: 16px;
-  height: 16px;
+	display: none;
+	position: relative;
+	width: 16px;
+	height: 16px;
 }
 .lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  margin: 4px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #2271b1 transparent transparent transparent;
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	margin: 4px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	border-color: #2271b1 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+	animation-delay: -0.45s;
 }
 .lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+	animation-delay: -0.3s;
 }
 .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+	animation-delay: -0.15s;
 }
 @keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
-.seo-crawler-results {
-  width: 100%;
-  height: 600px;
-  overflow-y: scroll;
+.seo-crawl-results {
+	width: 100%;
+	height: 600px;
+	overflow-y: scroll;
 }
 
-.seo-crawler-margin-top-10 {
-  margin-top: 10px !important;
+.seo-crawl-margin-top-10 {
+	margin-top: 10px !important;
 }
 
-.seo-crawler-margin-bottom-10 {
-  margin-bottom: 10px !important;
+.seo-crawl-margin-bottom-10 {
+	margin-bottom: 10px !important;
 }
 
-.seo-crawler-margin-top-20 {
-  margin-top: 20px !important;
+.seo-crawl-margin-top-20 {
+	margin-top: 20px !important;
 }
 
-.seo-crawler-margin-bottom-20 {
-  margin-bottom: 20px !important;
+.seo-crawl-margin-bottom-20 {
+	margin-bottom: 20px !important;
 }
 
-.seo-crawler-margin-right-10 {
-  margin-right: 10px !important;
+.seo-crawl-margin-right-10 {
+	margin-right: 10px !important;
 }
 
-.seo-crawler-margin-right-20 {
-  margin-right: 20px !important;
+.seo-crawl-margin-right-20 {
+	margin-right: 20px !important;
 }
-
