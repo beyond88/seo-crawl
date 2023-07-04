@@ -89,15 +89,15 @@ final class SeoCrawl {
 
         new SeoCrawl\Assets();
         new SeoCrawl\SeoCrawli18n();
-        // new SeoCrawl\Admin\Cron\SyncCron();
+        new SeoCrawl\Admin\Cron\SyncCron();
 
-        // if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-        //     new SeoCrawl\Ajax();
-        // }
+        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+            new SeoCrawl\Ajax();
+        }
 
-        // if ( is_admin() ) {
-        //     new SeoCrawl\Admin();
-        // }
+        if ( is_admin() ) {
+            new SeoCrawl\Admin();
+        }
     }
 
     /**
