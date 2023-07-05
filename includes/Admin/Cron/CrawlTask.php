@@ -76,7 +76,7 @@ class CrawlTask {
 	 */
 	private function crawl_links( $url ) {
 
-		$results = [];
+		$results  = [];
 		$response = wp_remote_get( $url );
 
 		if ( is_wp_error( $response ) ) {
@@ -86,7 +86,7 @@ class CrawlTask {
 		// Example code to extract links using DOM parsing.
 		$html = wp_remote_retrieve_body( $response );
 		$dom  = new \DOMDocument();
-		libxml_use_internal_errors(true); // Enable internal error handling.
+		libxml_use_internal_errors( true ); // Enable internal error handling.
 		$success = $dom->loadHTML( $html );
 		if ( ! $success ) {
 			// Handle the error.
@@ -95,21 +95,20 @@ class CrawlTask {
 
 			$wp_error = new \WP_Error();
 
-			foreach ($errors as $error) {
+			foreach ( $errors as $error ) {
 				// Add each error to the WP_Error object.
-				$wp_error->add('dom_error', $error->message);
+				$wp_error->add( 'dom_error', $error->message );
 			}
 
 			// Display or log the errors.
 			if ( $wp_error->get_error_messages() ) {
 
-				foreach ($wp_error->get_error_messages() as $message) {
+				foreach ( $wp_error->get_error_messages() as $message ) {
 					$results[] = esc_html( $message );
 				}
 
 				return $results;
 			}
-
 		}
 
 		$anchors = $dom->getElementsByTagName( 'a' );
