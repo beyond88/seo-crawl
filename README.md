@@ -1,16 +1,15 @@
-# Package Template
-Repository template for our packages
+# SEO Crawl
+A WordPress plugin to generate internal links to check SEO rating.
 
-# Usage
-When creating a new repository for a package or a plugin, select this repository as the template. It will initialize the new repository with all the structure & files contained in the template.
+<strong>How to use:</strong> Go to the admin dashboard and click on the SEO Crawl menu. There is a button `Start Crawl` to get all internal hyperlinks that are connected to the home page. After clicking on the `Start Crawl`, it will collect the home page connected to all links and will store it in the MySQL database. Also, it will start a cron job to collect the data and store it in the database hourly. It will generate a sitemap.html to display the result by clicking the `View sitemap` button.
 
-# Content
-* `bin/install-wp-tests.sh`: installer for WordPress tests suite
-* `.editorconfig`: config file for your IDE to follow our coding standards
-* `.gitattributes`: list of directories & files excluded from export
-* `.gitignore`: list of directories & files excluded from versioning
-* `.travis.yml`: Travis-CI configuration file
-* `composer.json`: Base composer file to customize for the project
-* `LICENSE`: License file using GPLv3
-* `phpcs.xml`: Base PHP Code Sniffer configuration file to customize for the project
-* `README.md`: The readme displayed on Github, to customize for the project
+
+
+
+
+
+
+
+
+
+
