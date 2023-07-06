@@ -1,55 +1,21 @@
-# Problem to be Solved
+As a developer, my approach to solving this problem would involve the following steps:
 
-The problem at hand is to develop a PHP app or WordPress plugin that assists website administrators in improving their SEO rankings. The administrator should be able to visualize how their web pages are linked to the home page, allowing them to manually identify areas for SEO optimization.
+<strong>Understanding the Requirements:</strong> I would carefully read and comprehend the provided requirements, ensuring a clear understanding of the desired outcome and user story.
 
-# Technical Specification
+<strong>Choosing the Technology:</strong> Based on the requirements, I would consider whether to build a standalone PHP application or a WordPress plugin. If WordPress is preferred or already in use, I would leverage its framework and create a settings page for the plugin.
 
-To solve the problem, I will create a WordPress plugin with the following key components and functionalities:
+<strong>Planning the Architecture:</strong> I would plan the overall architecture of the application or plugin, identifying the key components and their interactions. This would involve defining the necessary backend admin page, crawl functionality, viewing capabilities, error handling, and front-end integration.
 
-Backend Admin Page:
+<strong>Backend Implementation:</strong> I would start by developing the backend admin page or settings page. This would include creating the necessary user authentication mechanism to ensure only administrators can access the functionality. I would also design the interface for triggering crawls and viewing the results.
 
-Develop a back-end admin page or settings page for WordPress, providing a login mechanism for the admin.
-Implement a crawl trigger functionality for the admin to manually initiate a crawl and view the results.
+<strong>Crawl Functionality:</strong> To implement the crawl functionality, I would set up scheduled tasks using a suitable method (e.g., cron jobs or WordPress scheduled events) to trigger the crawl every hour. Additionally, I would provide an option for the admin to manually trigger an immediate crawl. During each crawl, I would handle tasks such as deleting previous crawl results, extracting internal hyperlinks, storing results temporarily in the database, and generating the sitemap.html file.
 
-## Crawl Functionality:
+<strong>Viewing and Error Handling:</strong> I would implement the functionality to allow the admin to request and view the stored crawl results on the admin page. If any errors occur during the crawling process, I would display error notices to inform the admin of the issues and provide guidance on how to proceed.
 
-- Set up a scheduled task to run the crawl every hour, while also allowing the admin to trigger an immediate crawl.
-- During each crawl:
-- Delete previous crawl results if any exist.
-- Remove the existing sitemap.html file if it is present.
-- Start the crawl from the website's root URL (home page).
-- Extract and store all internal hyperlinks temporarily in a database.
-- Display the crawl results on the admin page.
-- Save the home page's .php file as a .html file.
-- Generate a sitemap.html file to present the results in a sitemap-like structure.
+<strong>Front-End Integration:</strong> On the front-end, I would enable visitors to access and view the generated sitemap.html page. This would involve ensuring the necessary routing and serving of the HTML file, making it easily accessible for SEO analysis.
 
-## Viewing and Error Handling:
+<strong>Testing and Quality Assurance:</strong> Throughout the development process, I would perform rigorous testing to ensure the code functions as expected. This would involve both manual testing, simulating various scenarios, and automated testing using unit and integration tests. I would also consider utilizing tools like phpcs for code inspection and integrate the project with Travis CI for continuous integration.
 
-Enable the admin to request and view the stored crawl results on the admin page.
-Implement an error notification mechanism to display error messages if any issues occur during the crawling process.
+<strong>Documentation and Deployment:</strong> Finally, I would thoroughly document the codebase, providing clear instructions for installation, configuration, and usage. Once everything is well-tested and documented, I would prepare the application or plugin for deployment, adhering to best practices and considering any specific requirements for packaging and distribution.
 
-## Front-End Functionality:
-
-Allow visitors to access and view the generated sitemap.html page on the front-end.
-
-#Technical Decisions and Rationale
-
-## Backend Framework:
-
-I will use WordPress, depending on the requirements and preferences.
-I will leverage its existing infrastructure and utilize a settings page for the admin.
-
-## Database:
-
-I will use MySQL as the database to store the temporary crawl results.
-This choice ensures data persistence and allows for efficient retrieval and display on the admin page.
-
-## Crawling Strategy:
-
-To simplify the implementation, I will limit the crawl to the home webpage rather than recursively crawling through all internal hyperlinks.
-This decision reduces complexity and focuses on the specific goal of analyzing the home page's link structure for SEO improvement.
-
-## Error Handling:
-
-I will implement an error notification system to inform the admin of any errors encountered during the crawl process.
-This approach improves the user experience and provides guidance on how to address the issues.
+By following this approach, I would ensure a systematic and structured development process, addressing the problem step-by-step while considering technical decisions, best practices, and the desired outcome outlined in the user story.
