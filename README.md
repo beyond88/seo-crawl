@@ -6,6 +6,9 @@ A WordPress plugin to generate internal links to check SEO rating.
 ### Details
 Please browse the links to get details: https://github.com/beyond88/seo-crawl/blob/master/Explanation.md
 
+### Travis CI
+https://app.travis-ci.com/github/beyond88/seo-crawl
+
 ### Demo
 <img src="https://github.com/beyond88/seo-crawl/blob/master/seo-crawl.gif" alt="SEO Crawl">
 
